@@ -6,6 +6,9 @@ class Heap:
         self.type = type
         self.tree = []
 
+    def size(self):
+        return len(self.tree)
+
     def insert(self, value):
 
         heap = self.tree
@@ -51,6 +54,7 @@ class Heap:
         while(len(heap) >= 2*l):
 
             if self.type == 0:
+                # len(heap) < 2*l + 1 : 오른쪽 노드가 없을 경우.
                 if (heap[l-1] <= heap[2*l - 1] and len(heap) < 2*l + 1) or (heap[l-1] <= heap[2*l - 1] and heap[l-1] <= heap[2*l]):
                     return result
 
@@ -69,6 +73,7 @@ class Heap:
                     l = 2*l + 1
 
             else:
+                # len(heap) < 2*l + 1 : 오른쪽 노드가 없을 경우.
                 if (heap[l-1] >= heap[2*l - 1] and len(heap) < 2*l + 1) or (heap[l-1] >= heap[2*l - 1] and heap[l-1] >= heap[2*l]):
                     return result
 

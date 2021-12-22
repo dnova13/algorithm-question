@@ -5,6 +5,10 @@ class Heap {
         this.tree = []
     }
 
+    size() {
+        return this.tree.length
+    }
+
     insert(value) {
 
         let heap = this.tree
@@ -58,6 +62,7 @@ class Heap {
         while (heap.length >= 2 * l) {
 
             if (this.type == 0) {
+                // # len(heap) < 2*l + 1 : 오른쪽 노드가 없을 경우.
                 if ((heap[l - 1] <= heap[2 * l - 1] && heap.length < 2 * l + 1) || (heap[l - 1] <= heap[2 * l - 1] && heap[l - 1] <= heap[2 * l]))
                     return result
 
@@ -80,6 +85,7 @@ class Heap {
                 }
             }
             else {
+                // # len(heap) < 2*l + 1 : 오른쪽 노드가 없을 경우.
                 if ((heap[l - 1] >= heap[2 * l - 1] && heap.length < 2 * l + 1) || (heap[l - 1] >= heap[2 * l - 1] && heap[l - 1] >= heap[2 * l]))
                     return result
 
