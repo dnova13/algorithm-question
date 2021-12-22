@@ -1,4 +1,4 @@
-function merge_sort(arr) {
+function merge_sort(arr, type) {
 
     let lt = 0
     let rt = arr.length - 1
@@ -19,19 +19,34 @@ function merge_sort(arr) {
             let p1 = lt
             let p2 = mid + 1
 
-            console.log("bbb", tmp, p1, mid, p2, rt)
-
             while (p1 <= mid && p2 <= rt) {
 
-                if (arr[p1] < arr[p2]) {
+                // 오름 차순
+                if (type == 0) {
+                    if (arr[p1] < arr[p2]) {
 
-                    tmp.push(arr[p1])
-                    p1++
+                        tmp.push(arr[p1])
+                        p1++
+                    }
+                    else {
+                        tmp.push(arr[p2])
+                        p2++
+                    }
                 }
+
+                // 내림 차순
                 else {
-                    tmp.push(arr[p2])
-                    p2++
+                    if (arr[p1] > arr[p2]) {
+
+                        tmp.push(arr[p1])
+                        p1++
+                    }
+                    else {
+                        tmp.push(arr[p2])
+                        p2++
+                    }
                 }
+
             }
 
             // 임시 메모리에서 오른쪽 노드 포인트로 비교 정렬한 후, 남은 왼쪽 노드 결합
@@ -53,5 +68,8 @@ function merge_sort(arr) {
 let arr = [12, 3, 43, 4, 21, 33, 23, 32]
 
 console.log("Before", arr)
-merge_sort(arr)
+merge_sort(arr, 0)
+console.log('After', arr)
+console.log("Before", arr)
+merge_sort(arr, 1)
 console.log('After', arr)

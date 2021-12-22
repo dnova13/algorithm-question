@@ -1,5 +1,5 @@
 
-def merge_sort(arr):
+def merge_sort(arr, type):
 
     lt = 0
     rt = len(arr) - 1
@@ -20,13 +20,24 @@ def merge_sort(arr):
             while (p1 <= mid and p2 <= rt):
 
                 """ 이미 정렬된 두개의 파트 정렬을 비교 """
-                if arr[p1] < arr[p2]:
-                    tmp.append(arr[p1])
-                    p1 += 1
 
+                if (not type):
+
+                    if arr[p1] < arr[p2]:
+                        tmp.append(arr[p1])
+                        p1 += 1
+
+                    else:
+                        tmp.append(arr[p2])
+                        p2 += 1
                 else:
-                    tmp.append(arr[p2])
-                    p2 += 1
+                    if arr[p1] > arr[p2]:
+                        tmp.append(arr[p1])
+                        p1 += 1
+
+                    else:
+                        tmp.append(arr[p2])
+                        p2 += 1
 
             #  // 임시 메모리에서 오른쪽 노드 포인트로 비교 정렬한 후, 남은 왼쪽 노드 결합
             if p1 <= mid:
@@ -48,5 +59,8 @@ if __name__ == "__main__":
     arr = [12, 3, 43, 4, 21, 33, 23, 32]
 
     print("Before", arr)
-    merge_sort(arr)
+    merge_sort(arr, 0)
+    print('After', arr)
+    print("Before", arr)
+    merge_sort(arr, 1)
     print('After', arr)
