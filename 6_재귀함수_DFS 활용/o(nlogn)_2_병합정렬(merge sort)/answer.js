@@ -1,3 +1,4 @@
+
 function merge_sort(arr, type) {
 
     let lt = 0
@@ -66,6 +67,9 @@ function merge_sort(arr, type) {
 
 
 let arr = [12, 3, 43, 4, 21, 33, 23, 32]
+
+for (let i = 0; i < 100; i++)
+    arr.push(parseInt(Math.random() * 100 + 1))
 
 console.log("Before", arr)
 merge_sort(arr, 0)

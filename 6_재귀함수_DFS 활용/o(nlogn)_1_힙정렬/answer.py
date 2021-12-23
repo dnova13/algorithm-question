@@ -28,8 +28,8 @@ def heap_sort(type, arr):
 
 arr = [12, 3, 43, 4, 21, 33, 23, 32, 33, 11]
 
-# for v in range(1000):
-#     arr.append(r.randrange(1, 100))
+for v in range(100):
+    arr.append(r.randrange(1, 100))
 
 print("asc before", arr)
 arr = heap_sort(0, arr)

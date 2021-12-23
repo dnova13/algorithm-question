@@ -33,6 +33,9 @@ function heap_sort(type, arr) {
 
 let arr = [12, 3, 43, 4, 21, 33, 23, 32, 33]
 
+for (let i = 0; i < 100; i++)
+    arr.push(parseInt(Math.random() * 100 + 1))
+
 console.log("asc before", arr)
 arr = heap_sort(0, arr)
 console.log("asc after", arr)

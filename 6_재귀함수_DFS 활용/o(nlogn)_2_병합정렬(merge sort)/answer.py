@@ -1,3 +1,5 @@
+import random as r
+
 
 def merge_sort(arr, type):
 
@@ -57,6 +59,9 @@ def merge_sort(arr, type):
 if __name__ == "__main__":
 
     arr = [12, 3, 43, 4, 21, 33, 23, 32]
+
+    for v in range(100):
+        arr.append(r.randrange(1, 100))
 
     print("Before", arr)
     merge_sort(arr, 0)
